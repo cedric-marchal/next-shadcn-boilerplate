@@ -1,9 +1,6 @@
 // app/(public)/_components/header.tsx
 
-"use client";
-
 import { env } from "@/lib/env";
-import { useState } from "react";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -11,8 +8,6 @@ import Link from "next/link";
 import { BotIcon, HomeIcon, MailIcon } from "lucide-react";
 
 export const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
   const navLinks = [
     {
       label: "Home",
@@ -32,8 +27,8 @@ export const Header = () => {
   ];
 
   return (
-    <header className="bg-background">
-      <div className="container mx-auto px-4">
+    <header className="bg-background border-b flex items-center justify-between mx-4">
+      <div className="flex items-center gap-4">
         <Image
           src="/logo.svg"
           alt={`${env.NEXT_PUBLIC_APP_NAME} Logo`}
