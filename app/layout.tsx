@@ -3,6 +3,8 @@
 import "./globals.css";
 
 import type { Metadata } from "next";
+import { NuqsAdapter } from "nuqs/adapters/next/app";
+
 import { Providers } from "./providers";
 
 export const metadata: Metadata = {
@@ -23,7 +25,9 @@ export default function GlobalLayout({
   return (
     <html lang="en">
       <body>
-        <Providers>{children}</Providers>
+        <NuqsAdapter>
+          <Providers>{children}</Providers>
+        </NuqsAdapter>
       </body>
     </html>
   );
