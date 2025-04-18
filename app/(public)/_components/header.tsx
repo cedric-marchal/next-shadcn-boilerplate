@@ -27,7 +27,7 @@ export const Header = () => {
   ];
 
   return (
-    <header className="bg-background border-b flex items-center justify-between mx-4">
+    <header className="bg-background mx-4 flex items-center justify-between border-b">
       <div className="flex items-center gap-4">
         <Image
           src="/logo.svg"
@@ -49,7 +49,7 @@ export const Header = () => {
                   {link.label}
                 </Link>
               </li>
-            )
+            ),
           )}
         </ul>
       </nav>

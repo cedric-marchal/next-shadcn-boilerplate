@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function NotFoundPage() {
   return (
-    <main className="min-h-screen flex items-center justify-start bg-background overflow-hidden relative">
+    <main className="bg-background relative flex min-h-screen items-center justify-start overflow-hidden">
       <div className="container mx-auto px-4">
         <h1 className="text-4xl font-bold">404 - Not Found</h1>
         <p className="text-lg">The page you are looking for does not exist.</p>
