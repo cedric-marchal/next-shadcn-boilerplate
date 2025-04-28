@@ -20,10 +20,10 @@ export const metadata: Metadata = {
     url: env.NEXT_PUBLIC_BASE_URL,
     images: [
       {
-        url: "/images/og-image.png",
+        url: "/images/default-open-graph.png",
         width: 1200,
         height: 630,
-        alt: `${env.NEXT_PUBLIC_APP_NAME} - Home`,
+        alt: `Default Open Graph image for ${env.NEXT_PUBLIC_APP_NAME}`,
       },
     ],
   },
@@ -32,10 +32,10 @@ export const metadata: Metadata = {
     title: `Home | ${env.NEXT_PUBLIC_APP_NAME}`,
     description: "description",
     images: {
-      url: "/images/og-image.png",
+      url: "/images/default-open-graph.png",
       width: 1200,
       height: 630,
-      alt: `${env.NEXT_PUBLIC_APP_NAME} - Home`,
+      alt: `Default Open Graph image for ${env.NEXT_PUBLIC_APP_NAME}`,
     },
   },
 };
@@ -51,7 +51,7 @@ export default function HomePage() {
     },
     description: "description",
     headline: "title", // TODO: add title
-    image: `${env.NEXT_PUBLIC_BASE_URL}/images/og-image.png`,
+    image: `${env.NEXT_PUBLIC_BASE_URL}/images/default-open-graph.png`,
     sameAs: [
       "https://www.facebook.com/your-facebook-page",
       "https://twitter.com/your-twitter-handle",
@@ -62,7 +62,7 @@ export default function HomePage() {
       name: env.NEXT_PUBLIC_APP_NAME,
       logo: {
         "@type": "ImageObject",
-        url: `${env.NEXT_PUBLIC_BASE_URL}/images/logo.png`,
+        url: `${env.NEXT_PUBLIC_BASE_URL}/images/logo-app-name.png`,
       },
     },
   };

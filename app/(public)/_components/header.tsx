@@ -3,6 +3,7 @@ import { env } from "@/lib/env";
 import Image from "next/image";
 import Link from "next/link";
 
+import { ModeToggle } from "@/components/mode-toggle";
 import { BotIcon, HomeIcon, MailIcon } from "lucide-react";
 
 export const Header = () => {
@@ -51,6 +52,7 @@ export const Header = () => {
           )}
         </ul>
       </nav>
+      <ModeToggle />
     </header>
   );
 };
