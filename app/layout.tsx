@@ -23,8 +23,8 @@ export default function GlobalLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>
+    <html lang="en" suppressHydrationWarning>
+      <body suppressHydrationWarning>
         <NuqsAdapter>
           <Providers>{children}</Providers>
         </NuqsAdapter>
