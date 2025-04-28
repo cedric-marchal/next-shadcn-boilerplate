@@ -1,8 +1,8 @@
-import type { PropsWithChildren } from "react";
-
 import { Toaster } from "@/components/ui/sonner";
 
-export const Providers = ({ children }: PropsWithChildren) => {
+import type { ReactNode } from "react";
+
+export const Providers = ({ children }: Readonly<{ children: ReactNode }>) => {
   return (
     <>
       {children}

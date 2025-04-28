@@ -1,9 +1,11 @@
-import type { PropsWithChildren } from "react";
-
 import { Footer } from "./_components/footer";
 import { Header } from "./_components/header";
 
-export default function PublicLayout({ children }: PropsWithChildren) {
+import type { ReactNode } from "react";
+
+export default function PublicLayout({
+  children,
+}: Readonly<{ children: ReactNode }>) {
   return (
     <div className="flex min-h-screen flex-col">
       <Header />

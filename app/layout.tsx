@@ -1,6 +1,7 @@
 import "./globals.css";
 
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
 export default function GlobalLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html lang="en">

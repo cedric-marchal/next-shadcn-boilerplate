@@ -25,6 +25,7 @@ globs: *.tsx
 - Always create responsive components, optimized primarily for desktop, tablet, and mobile screens.
 - Components and subcomponents must be built to be as SEO-friendly as possible to support search engine indexing.
 - All components must be server components by default. Use "use client" only when strictly necessary for client-side interactivity.
+- Always use `import type` when importing types. Never import types without explicitly marking them as types to optimize bundle size and improve code clarity.
 
 ### Examples
 
@@ -89,6 +90,27 @@ export const Button = ({
     >
       {children}
     </button>
+  );
+};
+```
+
+Importing types correctly:
+```ts
+import type { ReactNode } from "react";
+
+type CardProps = {
+  title: string;
+  content: string;
+  children?: ReactNode;
+};
+
+export const Card = ({ title, content, children }: CardProps) => {
+  return (
+    <div className="rounded-md border p-4 shadow-sm">
+      <h2 className="text-xl font-bold">{title}</h2>
+      <p className="mt-2 text-gray-600">{content}</p>
+      {children && <div className="mt-4">{children}</div>}
+    </div>
   );
 };
 ```

@@ -87,6 +87,7 @@ app/
 ## typescript-usage
 
 - Use TypeScript for all code; prefer types over interfaces.
+- Always use `import type` when importing types to separate types from runtime code and improve bundle optimization.
 - Avoid enums; use maps instead.
 - Use functional components with TypeScript types.
 

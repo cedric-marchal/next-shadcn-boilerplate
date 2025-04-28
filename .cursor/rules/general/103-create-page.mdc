@@ -23,6 +23,7 @@ globs: *.tsx
 - Each page must include a <Script> tag embedding a schema.org JSON-LD object:
 - If in the (public) directory, define a JSON-LD script based on the page content type (WebPage, Article, Product, etc.).
 - If in the (protected) directory, do not include any structured data.
+- Always use `import type` when importing types (such as Metadata from next or WebSite from schema-dts). Never import types without explicitly marking them as types.
 
 ### Example
 
