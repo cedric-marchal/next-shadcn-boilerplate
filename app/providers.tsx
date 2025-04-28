@@ -1,7 +1,6 @@
-// app/providers.tsx
+import type { PropsWithChildren } from "react";
 
 import { Toaster } from "@/components/ui/sonner";
-import { PropsWithChildren } from "react";
 
 export const Providers = ({ children }: PropsWithChildren) => {
   return (

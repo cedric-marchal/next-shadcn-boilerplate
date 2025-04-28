@@ -1,6 +1,5 @@
-// app/(private)/(routes)/dashboard/page.tsx
-
 import { env } from "@/lib/env";
+
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

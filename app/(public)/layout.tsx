@@ -1,6 +1,4 @@
-// app/(public)/layout.tsx
-
-import { PropsWithChildren } from "react";
+import type { PropsWithChildren } from "react";
 
 import { Footer } from "./_components/footer";
 import { Header } from "./_components/header";

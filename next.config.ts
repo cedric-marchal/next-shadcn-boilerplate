@@ -1,11 +1,10 @@
-// next.config.ts
-
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: "standalone",
-  /* config options here */
+  reactStrictMode: true,
+  //serverComponentsExternalPackages: ["@prisma/client"],
   transpilePackages: ["@t3-oss/env-nextjs", "@t3-oss/env-core"],
+  formats: ["image/avif", "image/webp"],
 };
 
 export default nextConfig;

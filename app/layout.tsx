@@ -1,8 +1,7 @@
-// app/layout.tsx
-
 import "./globals.css";
 
 import type { Metadata } from "next";
+
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 
 import { Providers } from "./providers";

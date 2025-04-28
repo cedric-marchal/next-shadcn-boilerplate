@@ -1,6 +1,5 @@
-// app/not-found.tsx
-
 import { env } from "@/lib/env";
+
 import type { Metadata } from "next";
 
 import Link from "next/link";

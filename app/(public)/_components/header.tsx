@@ -1,5 +1,3 @@
-// app/(public)/_components/header.tsx
-
 import { env } from "@/lib/env";
 
 import Image from "next/image";

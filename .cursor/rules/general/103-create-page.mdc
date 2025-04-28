@@ -19,21 +19,20 @@ globs: *.tsx
 - Every page and its components must be structured and written to be as SEO-friendly as possible, facilitating maximum discoverability by search engines. Use semantic HTML, proper heading hierarchy, and accessibility tags (aria-*) where needed.
 - Metadata must be defined using the Metadata type from next.
 - If the page is located in the (public) directory, define all fields: title, description, keywords, alternates.canonical, openGraph, twitter, ...
-- If the page is located in the (private) directory, only define the title field.
+- If the page is located in the (protected) directory, only define the title field.
 - Each page must include a <Script> tag embedding a schema.org JSON-LD object:
 - If in the (public) directory, define a JSON-LD script based on the page content type (WebPage, Article, Product, etc.).
-- If in the (private) directory, do not include any structured data.
+- If in the (protected) directory, do not include any structured data.
 
 ### Example
 
 A public page:
 
 ```tsx
-// app/...
-
 import { env } from "@/lib/env";
+
 import type { Metadata } from "next";
-import { WebSite } from "schema-dts";
+import type { WebSite } from "schema-dts";
 
 import Script from "next/script";
 
@@ -115,12 +114,11 @@ export default function TitlePage() {
 }
 ``` 
 
-A private page (Dashboard and Admin pages):
+A protected page (Dashboard and Admin pages):
 
 ```tsx
-// app/...
-
 import { env } from "@/lib/env";
+
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

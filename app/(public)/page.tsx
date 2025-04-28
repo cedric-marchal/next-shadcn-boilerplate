@@ -1,8 +1,7 @@
-// app/(public)/page.tsx
-
 import { env } from "@/lib/env";
+
 import type { Metadata } from "next";
-import { WebSite } from "schema-dts";
+import type { WebSite } from "schema-dts";
 
 import Script from "next/script";
 
