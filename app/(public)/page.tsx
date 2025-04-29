@@ -50,7 +50,7 @@ export default function HomePage() {
       target: `${env.NEXT_PUBLIC_BASE_URL}/search?q={search_term_string}`,
     },
     description: "description",
-    headline: "title", // TODO: add title
+    headline: "Home", // TODO: add title
     image: `${env.NEXT_PUBLIC_BASE_URL}/images/default-open-graph.png`,
     sameAs: [
       "https://www.facebook.com/your-facebook-page",

@@ -4,7 +4,9 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   //serverComponentsExternalPackages: ["@prisma/client"],
   transpilePackages: ["@t3-oss/env-nextjs", "@t3-oss/env-core"],
-  formats: ["image/avif", "image/webp"],
+  images: {
+    formats: ["image/avif", "image/webp"],
+  },
 };
 
 export default nextConfig;
