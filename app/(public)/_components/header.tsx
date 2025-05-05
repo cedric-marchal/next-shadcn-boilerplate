@@ -6,8 +6,14 @@ import Link from "next/link";
 import { ModeToggle } from "@/src/components/mode-toggle";
 import { BotIcon, HomeIcon, MailIcon } from "lucide-react";
 
+type NavLink = {
+  label: string;
+  href: string;
+  icon: React.ReactNode;
+};
+
 export const Header = () => {
-  const navLinks = [
+  const navLinks: NavLink[] = [
     {
       label: "Home",
       href: "/",
@@ -29,7 +35,7 @@ export const Header = () => {
     <header className="bg-background mx-4 flex items-center justify-between border-b">
       <div className="flex items-center gap-4">
         <Image
-          src="/logo.svg"
+          src="/images/logo-app-name.png"
           alt={`${env.NEXT_PUBLIC_APP_NAME} Logo`}
           width={100}
           height={100}
@@ -37,19 +43,17 @@ export const Header = () => {
       </div>
       <nav className="flex items-center justify-between">
         <ul className="flex items-center gap-4">
-          {navLinks.map(
-            (link: { label: string; href: string; icon: React.ReactNode }) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className="flex items-center gap-2 text-sm font-medium"
-                >
-                  {link.icon}
-                  {link.label}
-                </Link>
-              </li>
-            ),
-          )}
+          {navLinks.map((link: NavLink) => (
+            <li key={link.href}>
+              <Link
+                href={link.href}
+                className="flex items-center gap-2 text-sm font-medium"
+              >
+                {link.icon}
+                {link.label}
+              </Link>
+            </li>
+          ))}
         </ul>
       </nav>
       <ModeToggle />
