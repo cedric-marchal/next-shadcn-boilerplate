@@ -1,4 +1,4 @@
-import { env } from "@/lib/env";
+import { env } from "@/src/lib/env";
 
 import type { Metadata } from "next";
 import type { WebSite } from "schema-dts";
