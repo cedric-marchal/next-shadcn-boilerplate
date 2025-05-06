@@ -33,13 +33,15 @@ export const Header = () => {
 
   return (
     <header className="bg-background mx-4 flex items-center justify-between border-b">
-      <div className="flex items-center gap-4">
-        <Image
-          src="/images/logo-app-name.png"
-          alt={`${env.NEXT_PUBLIC_APP_NAME} Logo`}
-          width={100}
-          height={100}
-        />
+      <div>
+        <Link href="/" className="flex py-4">
+          <Image
+            src="/images/logo-app-name.png"
+            alt={`${env.NEXT_PUBLIC_APP_NAME} Logo`}
+            width={50}
+            height={50}
+          />
+        </Link>
       </div>
       <nav className="flex items-center justify-between">
         <ul className="flex items-center gap-4">

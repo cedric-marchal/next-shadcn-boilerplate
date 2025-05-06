@@ -1,4 +1,5 @@
-import { Sidebar } from "./_components/sidebar";
+import { SidebarProvider } from "@/src/components/ui/sidebar";
+import { ProtectedSidebar } from "./_components/protected-sidebar";
 
 import type { ReactNode } from "react";
 
@@ -8,9 +9,11 @@ export default function ProtectedLayout({
   children: ReactNode;
 }>) {
   return (
-    <div className="flex h-full w-full flex-col gap-4">
-      <Sidebar />
-      {children}
-    </div>
+    <SidebarProvider defaultOpen>
+      <div className="flex h-full w-full">
+        <ProtectedSidebar />
+        <div className="flex-1 overflow-auto p-4">{children}</div>
+      </div>
+    </SidebarProvider>
   );
 }
