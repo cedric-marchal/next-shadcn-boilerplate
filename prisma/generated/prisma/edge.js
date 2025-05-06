@@ -134,7 +134,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/Users/developer/next-shadcn-boilerplate/lib/generated/prisma",
+      "value": "/Users/developer/next-shadcn-boilerplate/prisma/generated/prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -155,7 +155,7 @@ const config = {
     "rootEnvPath": null,
     "schemaEnvPath": "../../../.env"
   },
-  "relativePath": "../../../prisma",
+  "relativePath": "../..",
   "clientVersion": "6.7.0",
   "engineVersion": "3cff47a7f5d65c3ea74883f1d736e41d68ce91ed",
   "datasourceNames": [
@@ -171,8 +171,8 @@ const config = {
       }
     }
   },
-  "inlineSchema": "generator client {\n  provider = \"prisma-client-js\"\n  output   = \"../lib/generated/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel User {\n  id        String   @id @default(cuid())\n  email     String   @unique\n  name      String?\n  role      UserRole @default(CUSTOMER)\n  createdAt DateTime @default(now())\n  updatedAt DateTime @updatedAt\n}\n\nenum UserRole {\n  ADMIN\n  CUSTOMER\n}\n",
-  "inlineSchemaHash": "3eb5a590b6fcc4d86ba5a8cf6b291c1ef17b0409758984986955343d83276b0c",
+  "inlineSchema": "generator client {\n  provider = \"prisma-client-js\"\n  output   = \"./generated/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel User {\n  id        String   @id @default(cuid())\n  email     String   @unique\n  name      String?\n  role      UserRole @default(CUSTOMER)\n  createdAt DateTime @default(now())\n  updatedAt DateTime @updatedAt\n}\n\nenum UserRole {\n  ADMIN\n  CUSTOMER\n}\n",
+  "inlineSchemaHash": "42699b6b943704ba798ce02abaa0ae78199fba73a9cf3a112eb6f5123ca68ff6",
   "copyEngine": true
 }
 config.dirname = '/'
