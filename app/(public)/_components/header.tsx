@@ -2,6 +2,7 @@ import { env } from "@/src/lib/env";
 import { cn } from "@/src/lib/utils";
 
 import { ModeToggle } from "@/src/components/mode-toggle";
+import { MobileMenu } from "./mobile-menu";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -39,9 +40,12 @@ export const Header = () => {
           />
         </Link>
       </div>
-      <nav>
-        <ul className="flex items-center justify-between gap-4">
-          {navLinks.map((link, index) => (
+
+      <MobileMenu navLinks={navLinks} />
+
+      <nav className="hidden justify-end md:flex">
+        <ul className="mr-6 flex items-center justify-between gap-4">
+          {navLinks.map((link: NavLink, index: number) => (
             <li key={link.href}>
               <Link
                 key={link.label}
@@ -58,27 +62,8 @@ export const Header = () => {
             </li>
           ))}
         </ul>
+        <ModeToggle />
       </nav>
-      <ModeToggle />
     </header>
   );
 };
-
-/* Ajoute ceci dans ton CSS global (ex: globals.css) :
-
-@layer utilities {
-  @keyframes fade-in-down {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  .animate-fade-in-down {
-    animation: fade-in-down 0.3s both;
-  }
-}
-*/

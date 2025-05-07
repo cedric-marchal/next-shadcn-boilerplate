@@ -1,5 +1,7 @@
 import { env } from "@/src/lib/env";
 import { prisma } from "@/src/lib/prisma";
+
+import { ResetPasswordEmail } from "@/src/components/emails/reset-password-email";
 import { resend } from "@/src/lib/resend";
 import { betterAuth } from "better-auth";
 import { prismaAdapter } from "better-auth/adapters/prisma";
@@ -27,7 +29,7 @@ export const auth = betterAuth({
         from: "Acme <onboarding@resend.dev>",
         to: user.email,
         subject: "Reset Password",
-        text: `Click the link below to reset your password: ${url}`,
+        react: ResetPasswordEmail({ url }),
       });
     },
   },
