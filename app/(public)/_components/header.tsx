@@ -1,15 +1,14 @@
 import { env } from "@/src/lib/env";
+import { cn } from "@/src/lib/utils";
+
+import { ModeToggle } from "@/src/components/mode-toggle";
 
 import Image from "next/image";
 import Link from "next/link";
 
-import { ModeToggle } from "@/src/components/mode-toggle";
-import { BotIcon, HomeIcon, MailIcon } from "lucide-react";
-
 type NavLink = {
   label: string;
   href: string;
-  icon: React.ReactNode;
 };
 
 export const Header = () => {
@@ -17,17 +16,14 @@ export const Header = () => {
     {
       label: "Home",
       href: "/",
-      icon: <HomeIcon />,
     },
     {
-      label: "About",
-      href: "/about",
-      icon: <BotIcon />,
+      label: "Sign in",
+      href: "/sign-in",
     },
     {
-      label: "Contact",
-      href: "/contact",
-      icon: <MailIcon />,
+      label: "Sign up",
+      href: "/sign-up",
     },
   ];
 
@@ -38,21 +34,26 @@ export const Header = () => {
           <Image
             src="/images/logo-app-name.png"
             alt={`${env.NEXT_PUBLIC_APP_NAME} Logo`}
-            width={50}
-            height={50}
+            width={40}
+            height={40}
           />
         </Link>
       </div>
-      <nav className="flex items-center justify-between">
-        <ul className="flex items-center gap-4">
-          {navLinks.map((link: NavLink) => (
+      <nav>
+        <ul className="flex items-center justify-between gap-4">
+          {navLinks.map((link, index) => (
             <li key={link.href}>
               <Link
+                key={link.label}
                 href={link.href}
-                className="flex items-center gap-2 text-sm font-medium"
+                className={cn(
+                  "text-muted-foreground hover:text-foreground group relative text-sm font-medium transition-colors",
+                  "animate-fade-in-down translate-y-[-10px] opacity-0",
+                )}
+                style={{ animationDelay: `${100 + index * 75}ms` }}
               >
-                {link.icon}
                 {link.label}
+                <span className="bg-primary absolute -bottom-1 left-0 h-0.5 w-0 transition-all duration-300 group-hover:w-full"></span>
               </Link>
             </li>
           ))}
@@ -62,3 +63,22 @@ export const Header = () => {
     </header>
   );
 };
+
+/* Ajoute ceci dans ton CSS global (ex: globals.css) :
+
+@layer utilities {
+  @keyframes fade-in-down {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-fade-in-down {
+    animation: fade-in-down 0.3s both;
+  }
+}
+*/
