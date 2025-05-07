@@ -5,6 +5,8 @@ import Link from "next/link";
 import { Button } from "@/src/components/ui/button";
 import { Menu, X } from "lucide-react";
 
+import { ModeToggle } from "@/src/components/mode-toggle";
+import { cn } from "@/src/lib/utils";
 import { useEffect, useState } from "react";
 
 type NavLink = {
@@ -53,12 +55,12 @@ export const MobileMenu = ({ navLinks }: { navLinks: NavLink[] }) => {
             onClick={() => setIsOpen(false)}
           />
           <div
-            className={
-              `bg-card text-foreground relative flex w-11/12 max-w-sm flex-col items-center rounded-2xl px-8 py-8 shadow-2xl transition-all duration-100 ease-out ` +
-              (isOpen
+            className={cn(
+              "bg-card text-foreground relative flex w-11/12 max-w-sm flex-col items-center rounded-2xl px-8 py-8 shadow-2xl transition-all duration-100 ease-out",
+              isOpen
                 ? "scale-100 opacity-100"
-                : "pointer-events-none scale-95 opacity-0")
-            }
+                : "pointer-events-none scale-95 opacity-0",
+            )}
           >
             <Button
               type="button"
@@ -91,6 +93,9 @@ export const MobileMenu = ({ navLinks }: { navLinks: NavLink[] }) => {
                 ))}
               </ul>
             </nav>
+            <div className="mt-4">
+              <ModeToggle />
+            </div>
           </div>
         </div>
       )}
