@@ -27,6 +27,8 @@ app/
 ├── favicon.ico
 ├── robots.ts
 ├── sitemap.ts
+├── error.tsx
+├── global-error.tsx
 ├── (public)/
 │   ├── layout.tsx
 │   ├── page.tsx
